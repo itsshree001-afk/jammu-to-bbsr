@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jammu to BBSR ❤️</title>
+    <style>
+        :root {
+            --bg-color: #0f0c20;
+            --card-bg: rgba(255, 255, 255, 0.07);
+            --accent-color: #ff6b8b;
+            --text-color: #fceade;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at center, #2a085c, var(--bg-color));
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .heart {
+            position: fixed;
+            color: rgba(255, 107, 139, 0.3);
+            font-size: 20px;
+            animation: float 6s infinite linear;
+            z-index: 0;
+            user-select: none;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0); opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            z-index: 1;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255, 107, 139, 0.5);
+        }
+
+        header p {
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .timer-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            color: #d1c4e9;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .timer-unit {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .timer-unit span:first-child {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .timer-unit span:last-child {
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        .letter {
+            text-align: left;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            color: #f3e5f5;
+        }
+
+        .secret-box {
+            border: 2px dashed var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .lock-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="password"] {
+            width: 80%;
+            padding: 0.8rem;
+            border-radius: 25px;
+            border: 1px solid var(--accent-color);
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            text-align: center;
+            font-size: 1rem;
+            margin: 1rem 0;
+            outline: none;
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff6b8b, #ff8e53);
+            border: none;
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 107, 139, 0.6);
+        }
+
+        .hidden-content {
+            display: none;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .error-msg {
+            color: #ff4949;
+            font-size: 0.85rem;
+            display: none;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            margin-top: auto;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            padding-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Jammu ✈️ BBSR</h1>
+            <p>"Distance means so little when someone means so much."</p>
+        </header>
+
+        <div class="card">
+            <div class="timer-title">Time Spent Loving You</div>
+            <div class="timer" id="timer">
+                <div class="timer-unit"><span id="days">0</span><span>Days</span></div>
+                <div class="timer-unit"><span id="hours">0</span><span>Hours</span></div>
+                <div class="timer-unit"><span id="minutes">0</span><span>Minutes</span></div>
+                <div class="timer-unit"><span id="seconds">0</span><span>Seconds</span></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="letter">
+                <p>My Dearest,</p><br>
+                <p>Even with every kilometer between us, not a single day goes by where I don't feel close to you. Thank you for every late-night call, every shared smile, and for being my favorite part of every day.</p><br>
+                <p>Happy Anniversary. I can't wait until the next time I get to hold you.</p>
+            </div>
+        </div>
+
+        <div class="card secret-box" id="secretContainer">
+            <div id="lockScreen">
+                <div class="lock-icon">🔒</div>
+                <h3>A Secret Message Awaits</h3>
+                <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 5px;">Enter our anniversary passcode to reveal it</p>
+                
+                <input type="password" id="passcode" placeholder="Enter passcode (e.g. 0108)">
+                <br>
+                <button onclick="unlockMessage()">Unlock Secret</button>
+                <div class="error-msg" id="errorMsg">Incorrect passcode! Try again ❤️</div>
+            </div>
+
+            <div class="hidden-content" id="unlockedContent">
+                <div class="lock-icon">💌</div>
+                <h3 style="color: var(--accent-color); margin-bottom: 1rem;">My Secret To You ❤️</h3>
+                <div style="line-height: 1.8; text-align: left; background: rgba(0, 0, 0, 0.3); padding: 1.5rem; border-radius: 12px; border-left: 3px solid var(--accent-color); font-size: 0.98rem; color: #fceade;">
+                    <p>1 Year vrooo!!!! 🥹</p><br>
+                    <p>Happy tears as well as sad, misunderstandings, arguments, late night chats, late night work, late night our memory... this 1yr feels like 10yrs with you.</p><br>
+                    <p>Thank you for the safest place in my world to rely on. Thank you for those understandings when I’m unable to understand even mine, thank you for your patience, thank you for the friendship. I’m blessed with you.</p><br>
+                    <p>From Jammu to Bhubaneswar, this feels like an adventurous, scary, and most happiest journey with you. Thank you for having me at my lowest... I’m still in doubt if that day you did not come, today where I’ll be and how I will be, I don’t know.</p><br>
+                    <p>Thank you for being my parent, my strength, my love, my backbone, my every time supporter. Thank you for everything, every single thing.</p><br>
+                    <p>I’m really really sorry for those times when I’m patienceless towards you, when I know that u r trying to change something only for me… I want to marry you, I want a family with you and I’m super excited for this! For every up and down, I want it with you.</p><br>
+                    <p>Thank you for your love, for your care and support. I’m still in my teary eyes when I write about you and I don’t know how to exist without you, and I don’t want any existence without you. I love You so so so so so much more than anything and U know this right?</p><br>
+                    
+                    <!-- Added 10 Deep Lines Below -->
+                    <p>No distance, no number of miles, and no long hours apart can ever weaken what we share.</p>
+                    <p>In a world that is so full of chaos, your arms—even from afar—are the only place where my heart feels completely safe.</p>
+                    <p>You listened to my silent tears and healed parts of me you didn't even break.</p>
+                    <p>Every single conversation with you feels like home, no matter where in the world I am standing.</p>
+                    <p>I see our future so clearly in your eyes, and every sacrifice today feels worth the home we are building together.</p>
+                    <p>Thank you for loving me even on the days when I struggled to love myself.</p>
+                    <p>You are my quiet comfort, my loudest cheerleader, and my absolute favorite dream come true.</p>
+                    <p>If I had to live this past year all over again with every single hardship, I would choose it a thousand times just to end up with you.</p>
+                    <p>My heart was always meant to find yours, and it will stay yours through every lifetime.</p>
+                    <p>1st August will always remain the start of my favorite chapter—the day my heart found its permanent destination in you.</p><br>
+
+                    <p style="font-weight: bold; color: var(--accent-color); text-align: center; font-size: 1.1rem;">Just want to tell you: be mine always….. just hold on to us and I love youuuu sooooo muchhhhhh❤️❤️❤️❤️❤️❤️❤️</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            Made with ❤️ just for you.
+        </footer>
+    </div>
+
+    <script>
+        // Set to 1st August 2025
+        const startDate = new Date(2025, 7, 1, 0, 0, 0); // Month is 0-indexed (7 = August)
+        
+        // Updated Secret Passcode: 1st August (0108)
+        const SECRET_PASSCODE = "0108"; 
+
+        function updateTimer() {
+            const now = new Date();
+            const diff = now - startDate;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours;
+            document.getElementById('minutes').innerText = minutes;
+            document.getElementById('seconds').innerText = seconds;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        function unlockMessage() {
+            const input = document.getElementById('passcode').value;
+            const error = document.getElementById('errorMsg');
+            
+            if (input === SECRET_PASSCODE || input === "1st aug" || input === "1st Aug" || input === "1aug") {
+                document.getElementById('lockScreen').style.display = 'none';
+                document.getElementById('unlockedContent').style.display = 'block';
+                document.getElementById('secretContainer').style.borderStyle = 'solid';
+                
+                for(let i=0; i<25; i++) {
+                    createHeart();
+                }
+            } else {
+                error.style.display = 'block';
+            }
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
